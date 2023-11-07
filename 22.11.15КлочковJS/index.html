@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        <label>Вычисление площади прямоугольника</label><br>
+        <input type="text" size=5 name="st1"><hr>
+        <input type="text" size=5 name="st2"><hr>
+        <input type="button" value="Вычислить" onclick="care(document.form1.st1.value, document.form1.st2.value)">
+    </form><br>
+    
+    <form name="form2">
+        <label>Вычисление площади квадрата</label><br>
+        <input type="text" size=5 name="num1" onChange="srec(form2)"><br>
+        <input type="text" size=5 name="res"><br>
+        <input type="reset" value="Обновить">
+
+    </form>
+
+    <form name="cirle">
+        <label>Задание 2 Вычисление площади круга</label><br>
+        <input type="text" size="5" name="res1"><br>
+        <input type="button" value="Вычислить" onclick="cirql(cirle.res1.value)">
+    </form>
+
+    <form name="gip">
+        <label>Задание 3 Гипотенуза</label><br>
+        <input type="text" name="res1" size=5><br>
+        <input type="text" name="res2" size=5><br><hr>
+        <input type="text" name="resou" size=5><br>
+        <input type="button" value="Вычислить" onclick="gipot(gip.res1.value,gip.res2.value)">
+    </form>
+
+    <form name="trape">
+        <label>Задание 4 trapez</label><br>
+        <input type="text" name="res1" size=5><br>
+        <input type="text" name="res2" size=5><br>
+        <input type="text" name="res3" size=5><br><hr>
+        <input type="text" name="resou" size=5><br>
+        <input type="button" value="Вычисление" onclick="traper(trape.res1.value, trape.res2.value, trape.res3.value)"> 
+    </form>
+
+    <form name="ring">
+        <label> Задание 5</label><br>
+        <input type="text" name="res1" size=5><br>
+        <input type="text" name="res2"><hr>
+        <input type="button" value="Вычислить" onclick="ringo(ring.res1.value, ring.res2.value)">
+        <br><input type="text" name="res3">
+    </form>
+
+    <form action="" name="last">
+        <label for="">Задание 6</label><br>
+        <input type="text" name="a" onchange="lastos(last.a.value)"><br>
+        <input type="text" name="b"><hr>
+        <input type="reset">
+    </form>
+
+
+    <script>
+        function care(a,h){
+            var s=(a*h)/2;
+            document.write(s);
+            return s;
+        }
+
+        function srec(obj){
+            obj.res.value=obj.num1.value* obj.num1.value;
+        }
+
+        function cirql(a){
+            var res=(a*a*3.14);
+            document.write(res);
+            return res;
+        }
+
+        function gipot(a,b){
+            var c=(Math.sqrt(a**2)+Math.sqrt(b**2));
+            gip.resou.value=c;
+
+        }
+
+        function traper(a,b,c){
+            var re=((a+b)/2)*c;
+            trape.resou.value = re;
+        }
+
+        function ringo(a,b){
+            var c=3.14*((a**2)-(b**2));
+            ring.res3.value=c;
+        }
+
+        function lastos(a){
+            var b=(a**2*Math.sqrt(3))/4;
+            last.b.value=b;
+        }
+
+    </script>
+</body>
+</html>

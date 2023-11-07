@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nm=prompt('Выберите задание(1-4)');
+        var mn=parseInt(nm);
+        
+
+        if(mn==1){
+            for(var i=0;i<21;i++){
+                document.write(i+'<br>');
+            }
+        }else if (mn==2){
+            for (var i=0; i<5; i++){
+                document.write('Привет'+'<br>');
+            }
+        }else if (mn==3){
+            for (var i=1; i<31; i++){
+                document.write(i+" ");
+            }
+        }else if(mn==4){
+            var obj={green:'Зелёный', red:'Красный', blue:'Голубой'};
+            for (key in obj){
+                document.write(key+': '+obj[key]+"<br>");
+            }
+        }
+
+    </script>
+</body>
+</html>

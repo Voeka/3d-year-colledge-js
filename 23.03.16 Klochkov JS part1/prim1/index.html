@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Prim 1</h1>
+    <p>Кликни на элемент списка</p>
+
+    <ul id="ul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+        ul.onclick = function(event){
+            if(event.target.tagName!='LI') return;
+
+            if(event.ctrlKey || event.metaKey){
+                toggleSelect(event.target);
+            } else{
+                singleSelect(event.target);
+            }
+        }
+
+        // Предотвращение выделение ненужного элемента списка при клике
+        ul.onmousedown = function(){
+            return false;
+        };
+
+        function toggleSelect(li){
+            li.classList.Toggle('selected');
+        }
+
+        function singleSelect(li){
+            let selected = ul.querySelectorAll('.selected');
+            for(let elem of selected){
+                elem.classList.remove('selected');
+            }
+            li.classList.add('selected');
+        }
+    </script>
+    
+</body>
+</html>

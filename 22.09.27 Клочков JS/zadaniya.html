@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var numberName = prompt('Номер задания?');
+    var number=parseInt(numberName);
+    if (number==2){
+        var a=parseInt(prompt('Какое значение?задание'));
+        if (a>0){
+            a+=1;
+            alert(a);
+        }else alert(a);
+    } else if(number==3){
+        var a=parseInt(prompt('Какое значение?3задание'));
+        if (a>0){
+            a+=1;
+            alert(a);
+        }else{
+            a-=2;
+            alert(a);
+        }
+    } else if(number==4){
+        var a=parseInt(prompt('A='));
+        var b=parseInt(prompt('B='));
+        var c=parseInt(prompt('C='));
+        var d=parseInt(prompt('D='));
+        var e=parseInt(prompt('E='));
+        var m=a;
+        if(b>m) m=b;
+        if(c>m) m=c;
+        if(d>m) m=d;
+        if(e>m) m=e;
+        alert('Максимальное значение равно = '+ m);
+    } else if(number==5){
+        var a=Math.random()*(-1 - 1 + 1);
+        alert(Math.abs(a));
+    } else if(number==6){
+        var a=parseInt(prompt('A='));
+        var b=parseInt(prompt('B='));
+        var c=parseInt(prompt('C='));
+        var t=true;
+        if (a+b<c){ 
+            alert('Нельзя постоить');
+            t=false;
+        }
+        if (a+c<b) {
+            alert('Нельзя постоить');
+            t=false;
+    }
+        if (b+c<a) {
+            alert('Нельзя постоить');
+            t=false;
+    }
+    if (t==true) alert('Можно построить трегольник !');
+    } else alert('Вы не попали в задание, или ввели что-то не то');
+    </script>
+</body>
+</html>

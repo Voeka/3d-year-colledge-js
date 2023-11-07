@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convas</title>
+</head>
+<body>
+    <canvas id = "img_1" width="600px" height="600px" style="border:solid 2px black"></canvas>
+    <script>
+        
+    var i = img_1.getContext('2d');
+    
+        i.moveTo(300,50);
+        i.lineTo(550,550);
+        i.lineTo(50,550);
+        i.lineTo(300, 50);
+
+        i.lineWidth = 4;
+        i.strokeStyle = 'red';
+
+        i.stroke();
+
+
+    </script>
+</body>
+</html>

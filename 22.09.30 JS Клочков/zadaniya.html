@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var Nz=prompt('Номер задачи?');
+    var Zn=parseInt(Nz);
+
+    if(Zn==1){
+        var a=prompt('A');
+        if(a==6) alert('True');
+        else alert('False');
+    } else if(Zn==2){
+        var a=prompt('A');
+        if(a>0) alert('True');
+        else('False');
+    } else if(Zn==3){
+        var t=prompt('True/false');
+        if (t==true)alert('True');
+        else alert('False');
+    } else if(Zn==4){
+        var a=parseInt(prompt('A'));
+        if(a==0 || a==2){
+            a+=7;
+            alert(a);
+        }
+        else{
+            a/=10;
+            alert(a);
+        }
+    } else if(Zn==5){
+        var mun=parseInt(prompt('1,2,3,4'));
+        switch(mun){
+            case 1:
+                alert('Winter');
+                break;
+            case 2:
+                alert('Spring');
+                break;
+            case 3: 
+                alert('Summer');
+                break;
+            case 4:
+                alert('autumn')
+            default:
+                alert('Не то ввёли!!!');
+                break;
+        }
+    } else if(Zn==6){
+        var K=parseInt(prompt('1-5'));
+        switch(K){
+            case 1:
+                alert('bad');
+                break;
+            case 2:
+                alert('Not bad');
+                break;
+            case 3:
+                alert('Normal');
+                break;
+            case 4:
+                alert('Good');
+                break;
+            case 5:
+                alert('Great');
+                break;
+            default:
+                alert('Error, not found');
+                break;
+        }
+    } else if(Zn==7){
+        var N=parseInt(prompt('1-12'));
+        switch(N){
+            case 1:
+                alert('Winter');
+                break;
+            case 2:
+                alert('Winter');
+                break;
+            case 12:
+                alert('Winter');
+                break;
+            case 3:
+                alert('Spring');
+                break;
+            case 4:
+                alert('Spring');
+                break;
+            case 5:
+                alert('Spring');
+                break;
+            case 6:
+                alert('Summer-time');
+                break;
+            case 7:
+                alert('Summer-time');
+                break;
+            case 8:
+                alert('Summer-time');
+                break;
+            case 9:
+                alert('Autumn')
+                break;
+            case 10:
+                alert('Autumn')
+                break;
+            case 11:
+                alert('Autumn')
+                break;
+            default:
+                alert('Not');
+                break;
+        }
+    } else if(Zn==8){
+        var m=parseFloat(prompt('Выберите котегорию массы: 1 – килограмм, 2 – миллиграмм, 3 – грамм, 4 – тонна, 5 – центнер'));
+        var z=parseFloat(prompt('Масса объекта'));
+
+        switch(m){
+            case 1:
+                z=z;
+                alert(z+' кг');
+                break;
+            case 2:
+                z=z/1000000;
+                alert(z+' кг');
+                break;
+            case 3:
+                z=z/1000;
+                alert(z+' кг');
+                break;
+            case 4:
+                z=z*1000;
+                alert(z+' кг');
+                break;
+            case 5:
+                z=z*100;
+                alert(z+' кг');
+                break;
+        }
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

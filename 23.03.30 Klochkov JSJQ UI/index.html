@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="js/jquery-ui.css">
+    <link rel="stylesheet" href="js/c20.css">
+</head>
+<body>
+    <div id="prizes">
+        <ul>
+            <li><a href="#tab-1">1 Приз</a></li>
+            
+            <li><a href="#tab-2">2 Приз</a></li>
+            
+            <li><a href="#tab-3">3 Приз</a></li>
+        </ul>
+        <div id="tab-1"><p>Квадракоптер</p></div>
+        <div id="tab-2"><p>Ардуитно</p></div>
+        <div id="tab-3"><p>Коллекция книг</p></div>
+    </div>
+
+    <script>
+        $(function(){
+            $('#prizes').tabs();
+        });
+    </script>
+
+    <h2>Поиск номера в отеле</h2>
+    <form>
+        <p id="price">
+            <label for="amount">Стоимость:</label>
+            <input type="text" id="amount">
+        </p>
+        <div id="price-range"></div>
+
+        <p>
+            <label for="arrival">Прибытие:</label>
+            <input type="text" id="arrival">
+        </p>
+        <input type="submit" value="Поиск">
+    </form>
+    
+    <script>
+        $('#arrival').datepicker();
+        var $amount = $('#amount');
+        var $range = $('#price-range');
+
+            $('#price-range').slider({
+                Range:true,
+                min:0,
+                max:40000,
+                values:[7000,30000],
+                slide:function(event,ui){
+                    $amount.val(ui.values[0]+' - '+ ui.values[1]);
+                }
+            });
+            $amount.val($range.slider('values',0) + ' - ' + $range.slider('values',1));
+    </script>
+
+
+<span id="result">&nbsp;</span>
+    <div style="background-color: blue;
+     width: 50px;
+     height: 50px;
+    "></div>
+    <div style="background-color: rgba(15,99,30,1);
+    width: 50px;
+    height: 50px;
+   "></div>
+   <div style="background-color: #ff1;
+   width: 50px;
+   height: 50px;
+  "></div>
+  <div style="background-color: rgb(50, 50, 50);
+  width: 50px;
+  height: 50px;
+ "></div>
+
+ <script>
+    $(function(){
+        $('div').click(function(){
+            var color = $(this).css('background-color');
+            $('#result').text('Значение свойства Background-color = '+color);
+        });
+    });
+ </script>
+
+<div></div>
+<p>Сотрудник: <span></span>, возраст <span></span> лет, телефон: <span></span></p>
+<button>Получить данные</button><button>Удалить данные</button>
+
+<script>
+   $(function(){
+       $('div:first').data("employee",{
+           name:'Иван',
+           age:27,
+           phone:'+7 (903)217-77-77'
+       });
+       $('button:first').click(function(){
+           $('p span:eq(0)').text($('div:first').data('employee').name);
+           
+           $('p span:eq(1)').text($('div:first').data('employee').age);
+
+           $('p span:eq(2)').text($('div:first').data('employee').phone);
+       });
+
+       $('button:last').click(function(){
+           
+           $('p span').empty();
+           $('div:first').removeData('employee');
+       
+       });
+
+   });
+</script>
+
+<div style="width: 50px; height: 50px; background-color: red;" class="Zad_1"></div>
+<button>Видимый</button><button>Не видимый</button>
+
+<script>
+    $(function(){
+        $('.Zad_1').next('button').click(function(){
+            $('.Zad_1').show();
+            console.log('done');
+        });
+        $('.Zad_1').next('button').next('button').click(function(){
+            $('.Zad_1').hide();
+            console.log('done');
+        })
+
+    })
+</script>
+
+
+<div style="width: 50px; height: 50px; background-color: red;" class="Zad_2"></div>
+<br>
+<button id="fir">Не видимый</button><button id="sec"> Видимый</button>
+
+<script>
+    $(function(){
+        $('#fir').click(function(){
+            $('.Zad_2').slideUp();
+            console.log('done');
+        });
+        $('#sec').click(function(){
+            $('.Zad_2').slideDown();
+            console.log('done');
+        })
+
+    })
+</script>
+
+
+<input type="text" name="" id="Inputuss" disabled>
+<button id="Inpus">Снять ограничение</button>
+
+<script>
+    $(function(){
+        $('#Inpus').click(function(){
+            $('#Inputuss').removeAttr('disabled');
+        });
+    });
+</script>
+</body>
+</html>

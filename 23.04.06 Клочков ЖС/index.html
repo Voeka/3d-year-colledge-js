@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+    
+</head>
+<body onkeydown="keyDown(event)" onkeyup="keyUp(event)">
+    <div id="result">Нажмите на клавишу</div>
+
+ <div id="result2">Нажмите на клавишу</div>
+<h1>Способ 3</h1>
+ <div id="result3">Нажмите на клавишу</div>
+ <h1>Прим </h1>
+<input type="text" value="Привет всем!" id="text"><br>
+<span id="kc"></span>
+<h1>Прим 2</h1>
+    <form id="forma" onsubmit="return false">
+    
+        <p>Сфокусир и прес ботом</p>
+
+        <input type="text" placeholder="Клавишу жми тут" id="kinput">
+
+        <textarea id="area"></textarea>
+        <input type="button" value="Очистить" onclick="area.value =''"/>
+
+
+    </form>
+
+    <h1>Зад 1</h1>
+    <input class="ss" type="text">
+
+    <h1>Зад 2</h1>
+    <input type="tel" name="" id="phone">
+
+ <script>
+            
+function keyDown(event){
+    document.getElementById('result').innerHTML = 'Нажата: ' + event.keyCode;
+}
+
+function keyUp(event){
+    document.getElementById('result').innerHTML = 'Отпущена: ' + event.keyCode;
+    flag=1;
+    console.log(flag);
+}     
+
+function keyDown2(event){
+     document.getElementById('result2').innerHTML = 'Нажата: ' + event.keyCode;
+    }
+function keyUp2(event){
+     document.getElementById('result2').innerHTML = 'Отпущена: ' + event.keyCode;
+    } 
+   document.body.onkeydown = keyDown2;
+  document.body.onkeyup = keyUp2;
+       
+
+function keyDown3(event){
+    document.getElementById('result3').innerHTML = 'Нажата: ' + event.keyCode;
+}
+
+function keyUp3(event){
+    document.getElementById('result3').innerHTML = 'Отпущена: ' + event.keyCode;
+}
+
+document.body.addEventListener('keydown',keyDown3);
+
+document.body.addEventListener('keyup',keyUp3);
+
+text.onkeyup = function(e){
+    kc.innerHTML = 'Была нажата клавиша с кодом ' + e.keyCode;
+}
+
+kinput.onkeydown = kinput.onkeyup =kinput.onkeypress = handle;
+
+let lastTime = Date.now();
+
+function handle(e){
+    // if(form.elements[e.type + 'Ignore'].checked) return;
+
+    let text = e.type+
+    ' key=' + e.key+
+    ' code=' + e.code +
+    (e.shiftKey ? 'shiftKey': '')+
+    (e.ctrltKey ? 'ctrlKey': '')+
+    (e.altKey ? 'altKey': '')+
+    (e.metaKey ? 'metaKey': '')+
+    (e.repeat ? 'repeat': '')+
+    "\n";
+
+    if( area.value&& Date.now()-lastTime-250){
+        area.value+=new array(81).join('-')+ '\n';
+    }
+    lastTime = Date.now();
+
+    area.value +=text;
+
+    if(form.elements[e.type +'Stop'].checked){
+        e.preventDefault();
+    }
+}
+
+// Запрет на ввод значений не цифр в классе
+$(".ss").keypress(function(event){
+  event = event || window.event;
+  if (event.charCode && event.charCode!=0 && event.charCode!=46 && (event.charCode < 48 || event.charCode > 57) )
+    return false;
+});
+
+$("#phone").mask("9 (999) 999-99-99");
+
+</script>
+
+<h1>Зад 3</h1>
+<form name="form">
+	<input class="inputDisplay">
+</form>
+<table>
+	<tr>
+		<td><input type="button" value="C" onclick="clearInput()" style = "background-color: red"></td>
+		<td><input type="button" value="<" onclick="deleteCharacter()"></td>
+		<td><input type="button" value="/" onclick="insertCharacter('/')"></td>
+		<td><input type="button" value="x" onclick="insertCharacter('*')"></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="7" onclick="insertCharacter(7)"></td>
+		<td><input type="button" value="8" onclick="insertCharacter(8)"></td>
+		<td><input type="button" value="9" onclick="insertCharacter(9)"></td>
+		<td><input type="button" value="-" onclick="insertCharacter('-')"></td>
+</tr>
+	<tr>
+		<td><input type="button" value="4" onclick="insertCharacter(4)"></td>
+		<td><input type="button" value="5" onclick="insertCharacter(5)"></td>
+		<td><input type="button" value="6" onclick="insertCharacter(6)"></td>
+		<td><input type="button" value="+" onclick="insertCharacter('+')"></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="1" onclick="insertCharacter(1)"></td>
+		<td><input type="button" value="2" onclick="insertCharacter(2)"></td>
+		<td><input type="button" value="3" onclick="insertCharacter(3)"></td>
+		<td rowspan=2><input type="button" value="=" onclick="result()"  style="height: 158px; background-color: green"></td>
+	</tr>
+	<tr>
+		<td colspan="2"><input type="button" value="0" onclick="insertCharacter(0)" style="width: 158px; ;"></td>
+		<td><input type="button" value="." onclick="insertCharacter('.')"></td>
+	</tr>
+	</table>
+
+
+    <script>
+
+        // Удаление значений
+function deleteCharacter() {
+	let currentValue = $('.inputDisplay').val();
+	$('.inputDisplay').val(currentValue.substring(0, currentValue.length - 1));
+}
+// Ввод значений на поле
+function insertCharacter(char) {
+	let currentValue = $('.inputDisplay').val();
+	let length = currentValue.length;
+	let flag = false;
+	if(char == '+' || char == '-' || char == '*' || char == '/')
+	flag = true;
+	if(length == 0)
+	{
+		if(flag)
+		return;
+	}
+	let flagNew = false;
+	let lastCharacter = currentValue[length-1];
+	if(lastCharacter == '+' || lastCharacter == '-' || lastCharacter == '*' || lastCharacter == '/')
+	flagNew = true;
+	if(flag && flagNew)
+	$('.inputDisplay').val(currentValue.substring(0,length-1) + char);
+	else
+	$('.inputDisplay').val($('.inputDisplay').val() + char);
+}
+
+// Очистка поля
+function clearInput() {
+	$('.inputDisplay').val('');
+}
+// Функция подсчёта и вывода
+function result() {
+	let currentValue = $('.inputDisplay').val();
+	let length = currentValue.length;
+	let flag = false;
+	let char = currentValue[length-1];
+	if(char == '+' || char == '-' || char == '*' || char == '/')
+	flag = true;
+	if(flag)
+		$('.inputDisplay').val("ERROR!");
+	else
+		$('.inputDisplay').val(eval($('.inputDisplay').val()));
+}
+    </script>
+
+
+</body>
+</html>

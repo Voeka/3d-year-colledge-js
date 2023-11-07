@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        #train{
+            position: relative;
+            cursor: pointer;
+        }
+    </style>
+    <h1>Prim 3</h1>
+    <p>Кликни на элемент списка</p>
+    <img src="img/airplane-drawn.svg" id="train">
+   <script>
+    train.onclick = function(){
+        let start = Date.now();
+
+        let timer = setInterval(function(){
+            let timePassed = Date.now() - start;
+
+            train.style.left = timePassed/5 + 'px';
+
+            if(timePassed>20000) clearInterval(timer);
+        },20);
+    }
+   </script>
+    
+</body>
+</html>

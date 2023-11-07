@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function f1(){
+            
+                var a1 = document.getElementById('i1');
+                var a2 = document.getElementById('i2');
+                var a3 = document.getElementById('i3');
+                a1.style.backgroundImage='url(image/p1.png)';
+                a2.style.backgroundImage='url(image/p2.png)';
+                a3.style.backgroundImage='url(image/p3.png)';
+                
+        }
+    </script>
+    
+    <style>
+        .firs{
+            background-image: url(image/fb.png);
+            background-repeat: no-repeat;
+            height: 100px;
+            width: 100px;
+        }
+        .thirt{
+            background-image: url(image/g_1.png);
+            background-repeat: no-repeat;
+            height: 100px;
+            width: 100px;
+        }
+        .second{
+            background-image: url(image/fb.png);
+            background-repeat: no-repeat;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="firs" id='i1'>
+    </div>
+    <div class="second" id="i2"></div>
+    <div class="thirt" id="i3"></div>
+
+    <input type="button" value="Жми!" onclick="f1()">
+</body>
+</html>

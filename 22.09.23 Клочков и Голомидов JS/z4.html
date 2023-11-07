@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <script>
+        function square(n)
+{
+    var a=parseInt(n.a.value)
+    var b=parseInt(n.b.value)
+    var h=parseInt(n.h.value)
+    n.res.value=(a+b)/2*h;
+}
+    </script>  
+</head>
+<body>
+
+        <p>Пример сценария со знаниями из формы</p>
+        <form name="form1">
+            ОснованиеA: <input type="text" size=5 name="a"><hr>
+            ОснованиеB: <input type="text" size=5 name="b"><hr>
+            Высота: <input type="text" size=5 name="h"><hr>
+            Площадь: 
+            <input type="text" name="res">
+            <input type="button" value="вычислить"
+        onClick="square(form1)">
+        </form>
+</body>
+</html>

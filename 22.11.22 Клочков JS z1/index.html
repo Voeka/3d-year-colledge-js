@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1(){
+            var x=document.getElementById('p1');
+            x.style.color='red';
+            x.style.fontSize='22pt';
+            x.style.fontFamily='Times New Roman';
+        }
+        function f2(){
+            var x=document.getElementById('p1');
+            x.style.color='blue';
+            x.style.fontSize='16pt';
+            x.style.fontFamily='Arial';
+        }
+    </script>
+    <style type="text/css">
+        p{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16pt;
+            color: blue;
+        }
+        input{
+            font-size: 20pt;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="p1" onmouseout="f2()" onmouseover="f1()">
+        Над кем глумятся, тот уж не смеется,<br>
+        Кто платит подать, тот и разорен,<br>
+        Кто жертвует - с рубашкой расстается,<br>
+        Ссудил на грош, потребует мильон.<br>
+        Кто слово дал, держись: оно - закон,<br>
+        Кто ходит в церковь, тот и к Богу вхож,<br> 
+        Подует ветер - меркнет небосклон,<br>
+        Но Рождество наступит, если ждешь.<br>
+        /Франсуа Вийон/
+    </p>
+    <input type="button" onclick="f1()" value="Первая"><br><br>
+    <input type="button" onclick="f2()" value="Вторая">
+
+
+    
+</body>
+</html>

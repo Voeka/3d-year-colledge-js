@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convas</title>
+</head>
+<body>
+    <canvas id = "img_1" width="1000px" height="800px" style="border:solid 2px black"></canvas>
+    <script>
+    var kv = img_1.getContext('2d');
+         kv.lineWidth = 3;
+         kv.strokeStyle = "blue";
+         kv.moveTo(10,10);
+         kv.lineTo(260,10);
+         kv.lineTo(260,260);
+         kv.lineTo(10,260);
+         kv.lineTo(10,10);
+         kv.stroke();
+ 
+         kv.beginPath();
+         kv.moveTo(290, 10);
+       kv.lineTo(540, 10);
+       kv.lineTo(540, 260);
+       kv.lineTo(290, 260);
+       kv.lineTo(290, 10);
+ 
+       kv.lineWidth = 4;
+       kv.strokeStyle = "black";
+       kv.stroke();
+ 
+       kv.beginPath();
+       kv.moveTo(570, 10);
+       kv.lineTo(820, 10);
+       kv.lineTo(820, 260);
+       kv.lineTo(570, 260);
+       kv.lineTo(570, 10);
+ 
+       kv.lineWidth = 4;
+       kv.strokeStyle = "red";
+       kv.stroke();
+    </script>
+</body>
+</html>

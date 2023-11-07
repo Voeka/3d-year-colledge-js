@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+<body>
+<h1>Задание 1
+</h1>
+<style>
+    .sizing{
+        width: 150px;
+        height: 50px;
+        border: 1px solid black;
+    }
+
+    .left{width: 50px;
+        height: 50px;
+        background-color: rgb(67, 0, 223);
+        display: none;}
+        
+    .right{
+        width: 50px;
+        height: 50px;
+        background-color: green;
+        display: none;
+    }
+</style>
+    <button class="Start">Выполнить</button><button class="breakS">Остановить</button>
+    <div class="sizing"><H2>HEllow!</H2></div>
+
+    <script>
+
+        $('.Start').click(function(){
+            
+                $('.sizing').animate({
+                    height: '+=15000000px',
+                    width: '+=15000000px'
+                },10000)
+            
+        })
+
+        $('.breakS').click(function(){
+            $('.sizing').stop();
+        })
+
+    </script>
+
+    <h1>Зад 2</h1>
+
+    <button class="run">RUN</button>
+    <div style="
+    display: flex;
+    flex-direction: row;
+    ">
+        <div class="left"></div>
+        <div class="right"
+        ></div>
+    </div>
+
+    <script>
+        $('.run').click(function(){
+            $('.left').fadeIn('slow').slideUp('slow');
+            $('.right').fadeIn('slow').delay(1000).slideUp('slow');
+            
+        })
+    </script>
+<h1>Зад 1</h1>
+
+    <div>
+        <a href="https://www.google.com/">google</a>
+        <a href="https://dzen.ru/?yredirect=true">Yandex</a>
+        <a href="https://www.youtube.com/">Youtube</a>
+
+    </div>
+    <button class="changeThem">Изменить разметку</button>
+    <script>
+        $('.changeThem').click(function(){
+            $('a').wrapAll('<ul>');
+            $('a').wrap('<li>');
+            console.log('ya');
+            
+        })
+    </script>
+</body>
+</html>

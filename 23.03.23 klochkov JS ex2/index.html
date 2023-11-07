@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="c20.css">
+    <link rel="stylesheet" href="jquery-ui.css">
+    <title>Document</title>
+</head>
+<body>
+    <header><h1>Мозговой штурм</h1></header>
+    <h2>призы</h2>
+    <div class="third img"><img src="toys1.jpg"></div>
+    <div class="two-thirds">
+        <div id="accordeon">
+            <div class="acc-head">
+              Заголовок 1
+            </div>
+            <div class="acc-body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
+            </div>
+            <div class="acc-head">
+              Заголовок 2
+            </div>
+            <div class="acc-body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
+            </div>
+            <div class="acc-head">
+              Заголовок 3
+            </div>
+            <div class="acc-body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .content{
+            background-color: gray;
+        }
+
+        h3{
+            line-height: 15px;
+        }
+    </style>
+    <script src="jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+  //прикрепляем клик по заголовкам acc-head
+  $('#accordeon .acc-head').on('click', f_acc);
+});
+
+
+function f_acc(){
+//скрываем все кроме того, что должны открыть
+  $('#accordeon .acc-body').not($(this).next()).slideUp(5);
+// открываем или скрываем блок под заголовоком, по которому кликнули
+    $(this).next().slideToggle(5);
+}
+        
+    </script>
+    <style>h3{ line-height: 100px;
+    }</style>
+</body>
+</html>

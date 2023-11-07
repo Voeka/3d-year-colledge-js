@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x=0;
+        function Xia(){
+            x= document.form1.x.value;
+        }
+        
+        function XRand(){
+            x =Math.round(Math.random(10)*10);
+            document.form1.x.value =x;
+        }
+
+        function Yia(){
+            if (x<5){
+                var y = 2*x+3;
+                document.form1.y.value =y;
+            }
+            else if(x>=5){
+                var y = 3*x-4;
+                document.form1.y.value =y;
+            }
+        }
+    </script>
+</head>
+<body>
+<form name="form1">
+    <input type="button" value="Случайный X" onclick="XRand()"><br>
+    <input type="text" name="X" id="x" size="2" onchange="Xia()"><br>
+    <input type="button" value="Расчитать Y" onclick="Yia()">
+    <input type="text" name="Y" id="y" size="5">
+
+
+</form>
+
+    
+</body>
+</html>

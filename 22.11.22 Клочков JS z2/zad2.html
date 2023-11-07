@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function chan(obj){
+            var r1=Number(obj.a1.value);
+            var r2=Number(obj.a2.value);
+            if((r1<1)||(r1>5)||(r2<1)||(r2>5))
+            alert('ERROR')
+            else{
+                var z=document.images[r1-1].src;
+                document.images[r1-1].src=document.images[r2-1].src;
+                document.images[r2-1].src=z;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h4>Галерея рисунков</h4><br>
+    <img src="image/p1.png" width="90" name="pic1">
+    <img src="image/p2.png" width="90" name="pic2">
+    <img src="image/p3.png" width="90" name="pic3">
+    <img src="image/p4.png" width="90" name="pic4">
+    <img src="image/p5.png" width="90" name="pic5">
+    <br>
+    <form name="form1">
+        <input type="text" name="a1" size="1"> и
+        <input type="text" name="a2" size="2"><br>
+        <input type="button" value="Поменять" onClick="chan(form1)">
+    </form>
+
+    
+</body>
+</html>

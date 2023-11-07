@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nomber=prompt('Номер примера');
+        var nombur=parseInt(nomber);
+        if (nombur==1){
+        var a='0';
+        if(a==0) alert('True1');
+        else alert('False');
+        } else if(nombur==2){
+            var a='0';
+            if(a===0) alert('True1');
+            else alert('False');
+        } else if(nombur==3){
+            var a=0;
+            if(a!=0) alert('True1');
+            else alert('False'); 
+        } else if(nombur==4){
+            var a=1;
+            if(a!=0) alert('True1');
+            else alert('False'); 
+        } else if(nombur==5){
+            var a=3;
+            var b=-3;
+            if(a>0 && b<0) alert('true');
+            else alert('false');
+
+            var a=3;
+            if(a>=1 && a<=12) alert('True');
+            else alert('False');
+
+            var a=-3;
+            var b=-3;
+
+            if(a>0 || b<0) alert('True');
+            else('False;');
+        } else if(nombur==6){
+            var lang=prompt('Языки - ru, en, de');
+            switch(lang){
+                case 'ru':
+                    alert('RUSENG');
+                break;
+                case 'en':
+                    alert('EnglishEng');
+                break;
+                case 'de':
+                    alert('DoizuGo');
+                break;
+                default:
+                    alert('That language is not priority');
+                break;
+            }
+        }
+    </script>
+
+
+</body>
+</html>

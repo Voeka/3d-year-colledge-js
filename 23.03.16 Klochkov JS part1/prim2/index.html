@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Prim 2</h1>
+    <p>Кликни на картинку</p>
+    <img src="ПЗ_3_1_Пример 2_файлы/img2-lg.jpg" alt="large img" id="largeImg">
+
+    <ul id="thumbs">
+        <li><a href="ПЗ_3_1_Пример 2_файлы/img2-lg.jpg" title="Image 2"><img src="ПЗ_3_1_Пример 2_файлы/img2-thumb.jpg" alt=""></a></li>
+        <li><a href="ПЗ_3_1_Пример 2_файлы/img3-lg.jpg" title="Image 3"><img src="ПЗ_3_1_Пример 2_файлы/img3-thumb.jpg" alt=""></a></li>
+        <li><a href="ПЗ_3_1_Пример 2_файлы/img4-lg.jpg" title="Image 4"><img src="ПЗ_3_1_Пример 2_файлы/img4-thumb.jpg" alt=""></a></li>
+        <li><a href="ПЗ_3_1_Пример 2_файлы/img5-lg.jpg" title="Image 5"><img src="ПЗ_3_1_Пример 2_файлы/img5-thumb.jpg" alt=""></a></li>
+        <li><a href="ПЗ_3_1_Пример 2_файлы/img6-lg.jpg" title="Image 6"><img src="ПЗ_3_1_Пример 2_файлы/img6-thumb.jpg" alt=""></a></li>
+    </ul>
+
+    <script>
+        thumbs.onclick = function(event){
+            let thumbnail = event.target.closest('a');
+            if(!thumbnail) return;
+            showThumbnail(thumbnail.href, thumbnail.title);
+            event.preventDefault();
+        }
+        function showThumbnail(href,title){
+            largeImg.src = href;
+            largeImg.alt = title;
+        }
+        
+    </script>
+    
+</body>
+</html>

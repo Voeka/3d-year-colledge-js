@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="game1" class="game"></div>
+    <div id="game2" class="game"></div>
+
+
+
+
+
+
+
+
+    <script>
+
+initGame(document.querySelector('#game1'));
+initGame(document.querySelector('#game2'));
+//  создание игры
+function initGame(game) {
+	var field = createGameField(game);
+	
+	var size = 2;
+	// вызов новой игры
+	newGame();
+	// новая игра создание ячеек
+	function newGame() {
+		clearGameField(field);
+		var cells = drawGameField(size, field);
+		addActivateHandler(cells);
+	}
+	// Нажатие и смена цвета
+	function addActivateHandler(cells) {
+		var counter = 1;
+		
+		for (var i = 0; i < cells.length; i++) {
+			cells[i].addEventListener('click', function() {
+                // Смена цвета тут
+				if (this.innerHTML == counter) {
+					this.classList.add('active');
+					
+					if (counter == size * size) {
+						size++;
+						newGame();
+					}
+					
+					counter++;
+				}
+			});
+		}
+	}
+}
+// Создание стола
+function createGameField(game) {
+	var table = document.createElement('table');
+	game.appendChild(table);
+	
+	return table;
+}
+// Очистка игры
+function clearGameField(field) {
+	field.innerHTML = '';
+}
+// Вырисовывание игрового поля
+function drawGameField(size, field) {
+	var from = 1;
+	var to = size * size;
+
+	var arr = [];
+	arr = createArr(from, to);
+	arr = shuffleArr(arr);
+	arr = chunkArr(size, arr);
+	return createCells(arr, field);
+}
+
+// [[1, 2], [3, 4]]
+// Создание ячеек
+function createCells(arr, elem) {
+	var cells = [];
+	
+	for (var i = 0; i < arr.length; i++) {
+		var tr = document.createElement('tr');
+		for (var j = 0; j < arr[i].length; j++) {
+			var td = document.createElement('td');
+			td.innerHTML = arr[i][j];
+			tr.appendChild(td);
+			
+			cells.push(td);
+		}
+		
+		elem.appendChild(tr);
+	}
+	
+	return cells;
+}
+// Создание Массива
+function createArr(from, to) {
+	var arr = [];
+	
+	for (var i = from; i <= to; i++) {
+		arr.push(i);
+	}
+	
+	return arr;
+}
+// Массив
+function shuffleArr(arr) {
+	var result = [];
+	var length = arr.length;
+	
+	for (var i = 0; i < length; i++) {
+		var random = getRandomInt(0, arr.length - 1);
+		var elem = arr.splice(random, 1)[0];
+		result.push(elem);
+	}
+	
+	return result;
+}
+
+// [1, 2, 3, 4, 5] -> [[1, 2], [3, 4], [5]]
+// Массив в вассиве
+function chunkArr(n, arr) {
+	var result = [];
+	var iterCount = Math.ceil(arr.length / n);
+	
+	for (var i = 0; i < iterCount; i++) {
+		var elems = arr.splice(0, n);
+		result.push(elems);
+	}
+	
+	return result;
+}
+// Создание рандома
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+    </script>
+
+<style>
+        .game td {
+	padding: 20px;
+	border: 1px solid black;
+}
+.active {
+	background: red;
+}
+</style>
+
+    
+</body>
+</html>

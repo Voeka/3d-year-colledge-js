@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="box" id="box1">
+    <img src="img/1.jpg" alt="" class="a1">
+    <img src="img/2.jpeg" alt="" class="a2">
+    <img src="img/3.png" alt="" class="a3">
+    <img src="img/4.webp" alt="" class="a4">
+</div>
+
+<p onclick="valuuuue()">AAAAAAAAA</p>
+
+<p onclick="changess()">Change spots</p>
+
+<script>
+    var ob1;
+    var ob2;
+    var dop;
+    var val =0;
+    var targer1;
+    var targer2;
+    function valuuuue(){
+        val =1;
+    }
+
+    box1.onclick = function(event){
+        if(!ob1){
+            targer1 = event.target;
+            var targer1order = getComputedStyle(targer1).order;
+            ob1 = targer1order;
+            console.log(targer1order);
+        }
+
+        if(!ob2&&ob1&&val==1){
+            target2 = event.target;
+            var target2order = getComputedStyle(target2).order;
+            ob2 = target2order;
+            console.log(target2order + 2);
+        }
+
+       
+    }
+
+
+    function changess(){
+        targer1.style.order = ob2;
+        target2.style.order = ob1;
+    }
+    
+</script>
+</body>
+</html>

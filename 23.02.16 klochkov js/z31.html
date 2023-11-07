@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="1000" height="1000"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext("2d");
+
+        var image =new Image();
+        image.onload=function(){
+            setInterval(move,50);
+        }
+        image.src='z1.png';
+        var x =10;
+        function move(){
+            if(x<200) x+=5;
+            else x =10;
+            ctx.clearRect(0,0,canvas.width, canvas.height);
+            ctx.drawImage(image,x,x,x,x);
+            ctx.rotate(90);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>prim1</p>
+    <canvas id="Pr1" width="400px" height="400px" style="border: 3px solid gray;"></canvas>
+    <p>prim2</p>
+    <canvas id="Pr2" width="500px" height="500px" style="border: 2px solid red;"></canvas>
+    <p>prim3</p>
+    <canvas id="Pr3" width="800px" height="500px" style="border: 2px solid blue;"></canvas>
+    <script>
+        var P1 = document.getElementById('Pr1');
+        var cp1 =P1.getContext('2d');
+        var pos = {x:20,y:0,dx:0,dy:0};
+        cp1.strokeStyle ='red';
+
+        function draw(){
+            cp1.clearRect(0,0,P1.width,P1.height);
+            cp1.strokeRect(pos.x,pos.y,20,20);
+            cp1.stroke();
+        }
+
+        function update(){
+            if(pos.y<P1.height-20){
+                pos.y+=pos.dy;
+                pos.dy+=1;
+            }
+            else    
+                pos.y=pos.dy=0;
+            draw();
+        }
+        setInterval(update,100);
+
+        var p2 = document.getElementById('Pr2');
+        var cp2 =p2.getContext('2d');
+        var pos2={x:20,y:320,dx:5,dy:-15};
+        cp2.strokeStyle ='blue';
+        function draw2(){
+            cp2.arc(pos2.x,pos2.y,10,0,Math.PI*2);
+            cp2.stroke();
+        }
+
+        function update2(){
+            if(pos2.y<p2.width-20)
+                pos2.x+=pos2.dx;
+            else
+                pos2.x=20;
+            if(pos2.y<p2.height-20){
+                pos2.y+=pos2.dy;
+                pos2.dy+=0.4;
+            }
+            else{
+                pos2.y=320;
+                pos2.dy=-15;
+                pos2.x=20;
+                cp2.clearRect(0,0,p2.width,p2.height);
+                cp2.beginPath();
+            }
+            draw2();
+        }
+        setInterval(update2,10);
+
+        var p3 = document.getElementById('Pr3');
+        var cp3 =p3.getContext('2d');
+        var pos3={x:30,y:320,dx:4,dy:-10,imp:-10};
+
+        cp3.strokeStyle='blue';
+
+        function draw3(){
+            cp3.arc(pos3.x,pos3.y,100,0,Math.PI*2);
+            cp3.stroke();
+        }
+
+        function update3(){
+            if(pos3.x<p3.width-15){
+                pos3.x+=pos3.dx;
+            }
+            else{
+                pos3.x=20;
+            }
+            if(pos3.y<p3.height-15){
+                pos3.y+=pos3.dy;
+                pos3.dy+=0.4;
+            }
+            else{
+                if(Math.abs(pos3.imp)>2){
+                    pos3.imp=pos3.dy=pos3.imp/2;
+                    pos3.y+=pos3.dy;
+                }
+                else{
+                    pos3={x:20,y:320,dx:4,dy:-15,imp:-15}
+                    cp3.clearRect(0,0,p3.width,p3.height);
+                    cp3.beginPath();
+                }
+            }
+            draw3();
+        }
+        setInterval(update3,10);
+    </script>
+
+    <p>zad1</p>
+    <canvas id="z1" height="500px" width="500px" style="border: 1px solid black;"></canvas>
+    <script>
+        var z1 = document.getElementById('z1');
+        var cz1=z1.getContext('2d');
+        var pz1={x:30,xd:10};
+        var l =1;
+        cz1.strokeStyle='green';
+
+        function drawz1(){
+            cz1.clearRect(0,0,z1.width,z1.height);
+            cz1.arc(pz1.x,50,50,100,0,Math.PI*2);
+            cz1.stroke();
+            cz1.beginPath();
+        }
+
+        function updz1(){
+            if(l==1){
+                pz1.x+=pz1.xd;
+            }
+            else{
+                pz1.x-=pz1.xd;
+            }
+
+            if(pz1.x>z1.width-50 &&l==1){
+                l=0;
+                pz1.xd+=1;
+            }
+            if(pz1.x<50&&l==0){
+                l=1;
+                pz1.xd+=1;
+            }
+            drawz1();
+        }
+        setInterval(updz1,50);
+    </script>
+    <p>zad2</p>
+    <canvas id="z2" height="500px" width="500px" style="border: 1px solid black;"></canvas>
+    <script>
+        var z2 = document.getElementById('z2');
+        var cz2=z2.getContext('2d');
+        var pz2={y:30,yd:12};
+        var l2 =1;
+        cz2.strokeStyle='orange';
+
+        function drawz2(){
+            cz2.clearRect(0,0,z2.width,z2.height);
+            cz2.arc(250,pz2.y,50,100,0,Math.PI*2);
+            cz2.stroke();
+            cz2.beginPath();
+        }
+
+        function updz2(){
+            if(l2==1){
+                pz2.y+=pz2.yd;
+            }
+            else{
+                pz2.y-=pz2.yd;
+            }
+
+            if(pz2.y>z2.height-50 &&l2==1){
+                l2=0;
+                pz2.yd+=5;
+            }
+            if(pz2.y<10&&l2==0){
+                l2=1;
+                pz2.yd+=5;
+            }
+
+            drawz2();
+        }
+        setInterval(updz2,50);
+</script>
+<p>zad3</p>
+<canvas id="z3" height="500px" width="500px" style="border: 1px solid black;"></canvas>
+
+<script>
+        var z3 = document.getElementById('z3');
+        var cz3=z3.getContext('2d');
+        var pz3={y:30,yd:5};
+        l3=1;
+        
+        function drz3(){
+            cz3.clearRect(0,0,z3.width,z3.height);
+            cz3.strokeRect(250,pz3.y,10,10);
+            cz3.stroke();
+        }
+
+        function updz3(){
+            if(l3==1){
+                pz3.y+=pz3.yd;
+            }
+            if(l3==0){
+                pz3.y-=pz3.yd;
+            }
+            if(pz3.y>z3.height-10){
+                l3=0;
+            }
+            if(pz3.y<10){
+                l3=1;
+            }
+            drz3();
+        }
+        setInterval(updz3,10);
+</script>
+<p>zad4</p>
+<canvas id="z4" height="500px" width="500px" style="border: 1px solid black;"></canvas>
+<script>
+var z4 = document.getElementById('z4');
+var cz4 = z4.getContext('2d');
+var pz4 = {x:20,y:20,K:20};
+var con = 0;
+
+function drz4(){
+    cz4.clearRect(0,0,500,500);
+    cz4.arc(pz4.x,pz4.y,20,100,1000,Math.Pi*2);
+    cz4.stroke();
+    cz4.beginPath();
+}
+
+function updz4(){
+    if(con==0){
+        pz4.x+=pz4.K;
+        pz4.y+=pz4.K;
+    }
+    if(con==1){
+        pz4.x-=pz4.K;
+        pz4.y-=pz4.K;
+    }
+    if(pz4.x>z4.width-15&&pz4.y>z4.height-15&&con==0){
+        con=1;
+    }
+    if(pz4.x<15&&pz4.y<15&&con==1){
+        con=0;
+    }
+    drz4();
+}
+setInterval(updz4,50);
+</script>
+<p>zad5</p>
+<canvas id="z5" height="500px" width="500px" style="border: 1px solid black;"></canvas>
+
+<script>
+var z5 = document.getElementById('z5');
+var cz5 = z5.getContext('2d');
+var pz5 = {x:250,y:30,K:20};
+var mr = 0;
+var mt = 0;
+cz5.strokeStyle='green';
+
+function updat5(){
+    cz5.clearRect(0,0,500,500);
+    cz5.arc(pz5.x,pz5.y,20,100,1000,Math.Pi*2);
+    cz5.stroke();
+    cz5.beginPath();
+}
+
+function updatz5(){
+    if(mr==0){
+        pz5.x+=pz5.K;
+    }
+    else pz5.x-=pz5.K;
+    if(mt==0){
+        pz5.y+=pz5.K
+    }
+    else pz5.y-=pz5.K;
+
+    if(pz5.x>z5.width-20&&mr==0){
+        mr=1;
+    }
+    if(pz5.x<20&&mr==1){
+        mr=0;
+    }
+    if(pz5.y>z5.width-20&&mt==0){
+        mt=1;
+    }
+    if(pz5.y<20&&mt==1){
+        mt=0;
+    }
+    updat5();
+}
+setInterval(updatz5,50);
+</script>
+
+</body>
+</html>

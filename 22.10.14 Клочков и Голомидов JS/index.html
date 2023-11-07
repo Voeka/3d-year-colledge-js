@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sumdel(n)
+        {var s=1;
+        for (var i=2; i<=n/2; i++){
+            if(n%i ==0) s+=i}
+        return s
+        }
+        function sov(obj)
+        {
+            var n=obj.numb.value;
+            var s=''
+            if (n==sumdel(n)) s='Совершенное'
+            else s='не является совершенным'
+            return s
+        }
+
+        function propobj (obj){
+            var result =''
+            for (var i in obj){
+                result += obj.data.value +'.'+i+' = ' + (obj.data)[i]+'\r\n'
+            }
+            result +='\n\r'
+            form.data.value=result
+        }
+    </script>
+</head>
+<body>
+    <h1>Prim 1</h1>
+    <p>Итерационные методы. Совершенные числа</p>
+    <form name="form0">
+        Введите натуральное число: <input type="text" size="8" name="numb">
+        <input type="button" value="Вычислить" onclick="this.form.res.value=sov(form0)"><hr>
+        Данное число: <input type="text" size=24 name="res"><hr>
+        <input type="reset" value="Отменить">
+    </form>
+    <br><hr>
+    <h1>Prim 2</h1>
+    <h4>Определение свойств объектов</h4>
+    <form name="form1">
+        <input type="button" value="Выполнить" onclick="propobj (form1)"><hr>
+        <textarea name="data" cols="30" rows="10" id=1>Текст</textarea><hr>
+        <input type="reset" value="Очисть">
+    </form>
+</body>
+</html>

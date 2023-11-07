@@ -1,0 +1,26 @@
+.box{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: row wrap;
+    
+}
+img{
+    width: 250px;
+    height: 250px;
+}
+
+.a2{
+    order: 2;
+}
+
+.a1{
+    order: 1;
+}
+
+.a4{
+    order: 4;
+}
+
+.a3{
+   order: 3;
+}

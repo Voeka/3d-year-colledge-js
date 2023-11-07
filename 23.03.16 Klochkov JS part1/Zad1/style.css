@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    cursor: pointer;
+    border: 2px dotted blue;
+    margin: 0 2px;
+    list-style: none;
+}
+
+li img{
+    width: 100px;
+    height: 100px;
+}
+
+#largeImg{
+    width: 500px;
+    height: 500px;
+}
+
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    
+}

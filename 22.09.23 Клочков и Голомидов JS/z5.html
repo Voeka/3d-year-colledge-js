@@ -1,0 +1,27 @@
+<!DOCTYPE html> 
+<html> <head> <meta charset="utf-8">
+    <title>Вычисление площади кольца</title>
+    <script>
+    function square(n) {
+    var R=n.R.value, r=n.r.value;
+    n.res.value=Math.PI*(R*R - r*r);
+    }
+    </script>
+    </head>
+    <body>
+         <form name="form1">
+            <legend>Вычисление плоцади кольца</legend>
+            <br>
+    <label>Радиус большего круга:</label>
+    <input type="text" name="R">
+    <hr>
+    <label>Радиус меньшего круга:</label>
+    <input type="text" name="r">
+    <hr>
+    <label>Площадь кольца:</label>
+    <input type="text" name="res">
+    <hr>
+    <input type="button" onclick="square(form1)" value="Вычислить">
+    <inputtype="reset" value="обновить">
+    </form> </body>
+    </html>

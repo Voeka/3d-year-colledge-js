@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Prim 1</p>
+    <canvas id="x1" width="300px" height="300px" style="border:1px solid black;">
+
+    </canvas>
+
+    <p>Prim 2</p>
+    <canvas id="x2" width="300px" height="300px" style="border: 1px solid black;"></canvas>
+    <p>Zadanie</p>
+    <canvas id="zad" width="400px" height="400px" style="border: 1px solid salmon;"></canvas>
+    <script>
+        var x1 = document.getElementById('x1');
+        var cx1 = x1.getContext('2d');
+        cx1.font ='30px Arial';
+        cx1.fillText('Yahoo',10,50);
+
+        var x2 = document.getElementById('x2');
+        var cx2 = x2.getContext('2d');
+
+        cx2.textBaselinet = 'top';
+        cx2.font = 'bold 20px Arial';
+        cx2.fillStyle ='black';
+        cx2.fillText('Кто рана встаёт, тот жаваронок',30,30,200)
+
+        var za = document.getElementById('zad');
+        var cz =za.getContext('2d');
+        cz.font = 'bold 40px Verdana,sans-serif';
+        cz.lineWidth = 1;
+        cz.strokeStyle='red';
+        cz.strokeText('Я, Холочка, Самая мудрая волчица!',0,50,400);
+    </script>
+    
+</body>
+</html>

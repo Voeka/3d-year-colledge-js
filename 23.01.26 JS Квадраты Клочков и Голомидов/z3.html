@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <canvas id="Me" width="900" height="900" style="border:1px solid black">
+
+    </canvas>
+    <script>
+        var canvas=document.getElementById('Me');
+        var ctx=canvas.getContext('2d');
+        ctx.lineWidth=5
+        function square(y,color){
+            ctx.strokeStyle=color;
+            ctx.strokeRect(20,y,50,50);
+            ctx.stroke()
+        }
+
+        square(5, 'red');
+        square(55,'yellow');
+        square(105, 'blue');
+        square(155,'red');
+        </script>
+</body>
+</html>

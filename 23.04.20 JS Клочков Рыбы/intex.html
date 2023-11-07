@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="start">
+        <h1>Начать игру - нажать на поле!</h1>
+    </div>
+    <div class="end">
+        <h1>Конец</h1>
+        <h2>Монет набрано:<span class="money">0</span> </h2>
+    </div>
+    <span class="Timer">0</span>
+    <span class="money">0</span>
+
+    <script>
+        $('.start').click(function(){
+            $('.start').css('display','none');
+            gameStart();
+        })
+
+        var b = 0;
+        var coin = 0;
+        var fish =0;
+        var lastfi = 0;
+        var stopgun = 0;
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+
+        function endgame(){
+            $('.end').css('display','block');
+            $('.some').css('dispaly','none');
+        }
+
+       
+
+
+        function gameStart(){
+            var start = new Date;
+           
+            
+            var inter2 = setInterval(function(){
+                        for(var i=0;i<=lastfi;i++){
+                            if($('.g'+i).hasClass('left')){
+                                if($('.g'+i).attr('id')=='a0'){
+                                    $('.g'+i).animate({left:0+'px'},3000+getRandomInt(500)).toggleClass('left')
+                                }
+                                if($('.g'+i).attr('id')=='a1'){
+                                    $('.g'+i).animate({left:0+'px'},7000+getRandomInt(700)).toggleClass('left')
+                                }
+                                if($('.g'+i).attr('id')=='a2'){
+                                    $('.g'+i).animate({left:0+'px'},5000+getRandomInt(500)).toggleClass('left')
+                                }
+                                
+                                
+                            }
+                            else{
+                                if($('.g'+i).attr('id')=='a0'){
+                                    $('.g'+i).animate({left:$(document).width()+'px'},3000+getRandomInt(500)).toggleClass('left')
+                                }
+                                if($('.g'+i).attr('id')=='a1'){
+                                    $('.g'+i).animate({left:$(document).width()+'px'},7000+getRandomInt(700)).toggleClass('left')
+                                }
+                                if($('.g'+i).attr('id')=='a2'){
+                                    $('.g'+i).animate({left:$(document).width()+'px'},5000+getRandomInt(500)).toggleClass('left')
+                                }
+                                
+                                
+                            }
+                        
+                            
+                        
+                            
+
+                        }
+                        if(stopgun==1){
+                            clearInterval(inter2);
+                        }
+                    },
+                    100);
+
+            
+
+
+        //    Интервал создания рыб
+            var fisher = setInterval(function(){
+                if(fish<10){
+                        for(var i=0;fish<=9;i++){
+                            fish+=1;
+                            lastfi+=1;
+                        $('body').append('<div></div>');
+                        $('div').last().attr({'class':'some'+' g'+lastfi,'id':'a'+getRandomInt(3)}).bind('click',function(){
+                            fish-=1;
+                            console.log($(this));
+                            if($(this).attr('id')=='a0'){
+                                coin+=30;
+                            }
+                            if($(this).attr('id')=='a1'){
+                                coin+=20;
+                            }
+                            if($(this).attr('id')=='a2'){
+                                coin+=10;
+                            }
+                            
+                            $(this).remove();
+                            console.log(coin);
+                        }).offset({top:getRandomInt($(document).height()-100)})
+                        
+                }}
+            },1000)
+            
+            
+            // Таймер отсчёта
+            var inter = setInterval(function() {
+                fish = $('div').length;
+                    b+=0.1;
+                    $('.Timer').text(Math.round(30 - b) + " Секунд");
+                    $('.money').text(coin);
+                    
+                    // console.log(b);
+                    // console.log('fish'+ fish);
+                    // console.log('coin = '+coin);
+                    if(b>=30){
+                        endgame();
+                        alert('Done');
+                        clearInterval(inter);
+                        stopgun = 1;
+                    }
+                    
+
+            
+
+                }, 100);
+            
+            
+
+        }
+    </script>
+</body>
+</html>

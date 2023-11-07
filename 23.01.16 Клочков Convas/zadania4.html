@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convas</title>
+</head>
+<body>
+    <canvas id="image_1" width="500px" height="1000px"></canvas>
+    <script>
+      var im_1 = image_1.getContext("2d");
+      im_1.lineWidth = 5;
+      im_1.strokeStyle = "black";
+
+      im_1.moveTo(10, 10);
+      im_1.lineTo(400, 10);
+      im_1.lineTo(400, 260);
+      im_1.lineTo(10, 260);
+      im_1.lineTo(10, 10);
+      im_1.stroke();
+
+      im_1.beginPath();
+      im_1.moveTo(10, 300);
+      im_1.lineTo(400, 300);
+      im_1.lineTo(400, 550);
+      im_1.lineTo(10, 550);
+      im_1.lineTo(10, 300);
+
+      im_1.lineWidth = 5;
+      im_1.strokeStyle = "red";
+      im_1.stroke();
+
+      im_1.beginPath();
+      im_1.moveTo(10, 590);
+      im_1.lineTo(400, 590);
+      im_1.lineTo(400, 840);
+      im_1.lineTo(10, 840);
+      im_1.lineTo(10, 590);
+
+      im_1.lineWidth = 5;
+      im_1.strokeStyle = "orange";
+      im_1.stroke();
+    </script>
+</body>
+</html>

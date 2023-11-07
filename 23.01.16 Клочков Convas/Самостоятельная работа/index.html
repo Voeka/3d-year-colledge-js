@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная</title>
+</head>
+<body>
+    <canvas id="image" width="1000px" height="300px" style="border: solid 2px black;" ></canvas>
+    <script>
+        i = image.getContext('2d');
+        i.strokeStyle = 'purple';
+        i.lineWidth = 5;
+        i.moveTo(250,50);
+        i.lineTo(300,250);
+        i.lineTo(200,250);
+        i.lineTo(250,50);
+        i.stroke();
+
+        i.moveTo(400,50);
+        i.lineTo(350,250);
+        i.lineTo(450,250);
+        i.lineTo(400,50);
+        i.stroke();
+        
+        i.moveTo(550,50);
+        i.lineTo(500,250);
+        i.lineTo(600,250);
+        i.lineTo(550,50);
+        i.stroke();
+
+        i.moveTo(700,50);
+        i.lineTo(650,250);
+        i.lineTo(750,250);
+        i.lineTo(700,50);
+        i.stroke();
+
+        i.moveTo(850,50);
+        i.lineTo(800,250);
+        i.lineTo(900,250);
+        i.lineTo(850,50);
+        i.stroke();
+    </script>
+</body>
+</html>

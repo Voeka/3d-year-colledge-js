@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Prim 2</h1>
+    <p>Кликни на картинку</p>
+    <img src="ПЗ_3_1_Пример 2_файлы/1.jpg" alt="large img" id="largeImg">
+
+    <ul id="thumbs">
+        <li><a href="ПЗ_3_1_Пример 2_файлы/1.jpg"><img src="ПЗ_3_1_Пример 2_файлы/1.jpg" alt=""></a></li>
+        <li><a href="ПЗ_3_1_Пример 2_файлы/2.jpeg"><img src="ПЗ_3_1_Пример 2_файлы/2.jpeg" alt=""></a></li>
+        <li><a href="ПЗ_3_1_Пример 2_файлы/3.png"><img src="ПЗ_3_1_Пример 2_файлы/3.png" alt=""></a></li>
+        <li><a href="ПЗ_3_1_Пример 2_файлы/4.webp"><img src="ПЗ_3_1_Пример 2_файлы/4.webp" alt=""></a></li>
+        <li><a href="ПЗ_3_1_Пример 2_файлы/5.jpg"><img src="ПЗ_3_1_Пример 2_файлы/5.jpg" alt=""></a></li>
+        <li><a href="ПЗ_3_1_Пример 2_файлы/6.webp"><img src="ПЗ_3_1_Пример 2_файлы/6.webp" alt=""></a></li>
+        <li><a href="ПЗ_3_1_Пример 2_файлы/7.jpg"><img src="ПЗ_3_1_Пример 2_файлы/7.jpg" alt=""></a></li>
+        <li><a href="ПЗ_3_1_Пример 2_файлы/8.jpg"><img src="ПЗ_3_1_Пример 2_файлы/8.jpg" alt=""></a></li>
+        <li><a href="ПЗ_3_1_Пример 2_файлы/9.jpg"><img src="ПЗ_3_1_Пример 2_файлы/9.jpg" alt=""></a></li>
+        <li><a href="ПЗ_3_1_Пример 2_файлы/10.jpg"><img src="ПЗ_3_1_Пример 2_файлы/10.jpg" alt=""></a></li>
+    
+    
+    </ul>
+
+    <script>
+        thumbs.onclick = function(event){
+            let thumbnail = event.target.closest('a');
+            if(!thumbnail) return;
+            showThumbnail(thumbnail.href, thumbnail.title);
+            event.preventDefault();
+        }
+        function showThumbnail(href,title){
+            largeImg.src = href;
+            largeImg.alt = title;
+        }
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test(k){
+            var a = form1.data.value;
+            if (a!='')
+            form1.res.value = k*Math.pow(a,2)
+            else alert('введите значение')
+        }
+    </script>
+</head>
+<body>
+    <form name="form1">
+        Введит значение
+        <input type="text" name='data' size="10"><hr>
+        Укажите форму <br>
+        <input type="radio" name="fv" value=1 onclick="test(form1.elements[1].value)">Квадрат<br>
+        <input type="radio" name="fv" value=3.14 onclick="test(form1.elements[2].value)">Круг<br>
+        <input type="radio" name="fv" value=0.42 onclick="test(form1.elements[3].value)">Треугольник<br>
+        <hr>
+        Площадь: <input type="text" name="res" size=10>
+    </form>
+</body>
+</html>

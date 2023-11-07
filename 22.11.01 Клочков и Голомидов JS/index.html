@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var a = [5,10,15,20];
+        for(i=0;i<4;i++){
+            document.write(a[i]*3+'<br>')
+        }
+
+        var fruits =['Банан','Яблоко','Апельсин','Манго']
+        document.write(fruits.join()+'<br>');
+        document.write(fruits.join('+')+'<br>');
+        document.write(fruits.join(' и ')+ '<br>');
+
+        document.write('<br><h1>Z1</h1><br>')
+
+        var b=[];
+        for(i=0;i<10;i++){
+            b.push(i+1);
+        }
+        document.write(b);
+
+        document.write('<br><h1>Z2</h1><br>')
+
+        var c=[];
+        for(i=1;i<101;i++){
+            if(i%2==0){
+                c.push(i);
+            }
+        }
+        document.write(c);
+
+        document.write('<br><h1>Z3</h1><br>')
+
+        var d=[20,30,40,50];
+
+        for(i=0;i<4;i++){
+            d[i]=d[i]*4;
+        }
+        for(i=0;i<4;i++){
+            document.write(d[i]+'<br>');
+        }
+
+        document.write('<br><h1>Z4</h1><br>')
+
+        var styles=["Джаз","Блюз"];
+        styles.push('Рок-н-Ролл');
+        styles.pop();
+        styles.push('Классика');
+        document.write(styles.shift()+'<br>');
+        styles.unshift('Рэп','Регги');
+        document.write(styles);
+
+        document.write('<br><h1>Z5</h1><br>')
+
+        var e=[];
+
+        for(i=0;i<16;i++){
+            if(i%2==1){
+                e.push(i);
+            }
+        }
+        document.write(e);
+
+        
+    </script>
+    
+</body>
+</html>

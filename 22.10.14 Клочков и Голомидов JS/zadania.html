@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nm = prompt('Введите номер задания?');
+        var mn =parseInt(nm);
+
+        if(mn==1){
+            document.write('Проверены)');
+        } else if(mn==2){
+            for(var i=1;i<16;i++){
+                document.write('Привет!'+"<br>");
+            }
+        } else if(mn==3){
+            var K =prompt('Число для вывода');
+            var N =parseInt(prompt('Сколько раз?'));
+            for (var i=1;i<N+1;i++){
+                document.write(K+'<br>')
+            }
+        } else if(mn==4){
+            for (var i=15;i!=0;i--){
+                document.write(i+' ')
+            }
+        } else if(mn==5){
+            var N=parseInt(prompt('Цена конфет за кг'));
+            for(var i=1;i<11;i++){
+                document.write(N*i+' рублей за КГ '+i+' конфет'+'<br>')
+            }
+        }else if(mn==6){
+            var A=parseInt(prompt('Целое число А'));
+            var B=parseInt(prompt('Целое число B, A<B'));
+            var SUM=0;
+            for (A;A<B+1;A++){
+                SUM+=A;
+                document.write(A+'<br>')
+                document.write(SUM+'<br>')
+            }
+        }
+    </script>
+</body>
+</html>

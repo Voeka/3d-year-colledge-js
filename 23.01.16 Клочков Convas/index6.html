@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convas</title>
+</head>
+<body>
+    <canvas id = "img_1" width="400px" height="200px" style="border:solid 2px black"></canvas>
+    <script>
+        var g = img_1.getContext('2d');
+        g.lineWidth = 1;
+        g.strokeStyle = 'black';
+
+        g.moveTo(10.5,194.5);
+        g.lineTo(10.5,5.5);
+        g.lineTo(7.5,13.5);
+        g.moveTo(10.5,5,5);
+        g.lineTo(13.5,13.5);
+
+        g.moveTo(5.5,100.5);
+        g.lineTo(394.5,100.5);
+        g.lineTo(386.5,97.5);
+        g.moveTo(394.5,100,5);
+        g.lineTo(386.5,103.5);
+
+        g.stroke();
+        
+        g.beginPath();
+        g.lineWidth = 2;
+        g.strokeStyle = 'red';
+
+        g.moveTo(10,100);
+        var x = 0, y = 0;
+        var m= 30;
+        var x0 = 10.5, y0 = 100.5;
+
+        for (x = 0; x <((400-x0*2)/m); x = x+1/m){
+            y = Math.sin(x);
+            g.lineTo(x*m + x0, y*m + y0);
+        }
+
+        g.stroke();
+        </script>
+</body>
+</html>
